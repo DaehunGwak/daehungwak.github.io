@@ -5,6 +5,8 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
+  siteUrl: 'https://daehungwak.github.io',
+  pathPrefix: '/',
   siteName: 'Gridsome Blog Starter',
   siteDescription: 'A simple, hackable & minimalistic starter for Gridsome that uses Markdown for content.',
 
