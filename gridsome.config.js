@@ -7,7 +7,7 @@
 module.exports = {
   siteUrl: 'https://daehungwak.github.io',
   pathPrefix: '/',
-  siteName: 'ordi',
+  siteName: 'Ordi',
   siteDescription: '공부, 생각, 작업물 등을 정리하는 블로그',
 
   templates: {
