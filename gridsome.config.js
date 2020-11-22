@@ -7,8 +7,8 @@
 module.exports = {
   siteUrl: 'https://daehungwak.github.io',
   pathPrefix: '/',
-  siteName: 'Gridsome Blog Starter',
-  siteDescription: 'A simple, hackable & minimalistic starter for Gridsome that uses Markdown for content.',
+  siteName: 'ordi',
+  siteDescription: '공부, 생각, 작업물 등을 정리하는 블로그',
 
   templates: {
     Post: '/:title',
