@@ -1,7 +1,7 @@
 <template>
   <Layout :show-logo="false">
     <!-- Author intro -->
-    <Author :show-title="true" />
+    <Author />
 
     <!-- List posts -->
     <div class="posts">
@@ -44,7 +44,7 @@ export default {
     PostCard
   },
   metaInfo: {
-    title: 'Hello, world!'
+    title: 'Dev Blog'
   }
 }
 </script>

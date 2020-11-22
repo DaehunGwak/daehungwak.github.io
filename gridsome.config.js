@@ -5,11 +5,13 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: 'Gridsome Blog Starter',
-  siteDescription: 'A simple, hackable & minimalistic starter for Gridsome that uses Markdown for content.',
+  siteUrl: 'https://daehungwak.github.io',
+  pathPrefix: '/',
+  siteName: 'Ordi',
+  siteDescription: '공부, 생각, 작업물 등을 정리하는 블로그',
 
   templates: {
-    Post: '/:title',
+    Post: '/:slug',
     Tag: '/tag/:id'
   },
 
@@ -26,7 +28,7 @@ module.exports = {
             typeName: 'Tag',
             create: true
           }
-        }
+        },
       }
     }
   ],
@@ -39,7 +41,10 @@ module.exports = {
       anchorClassName: 'icon icon-link',
       plugins: [
         '@gridsome/remark-prismjs'
-      ]
+      ],
+      options: {
+        showLineNumbers: true,
+      }
     }
   }
 }
