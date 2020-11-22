@@ -11,7 +11,7 @@ module.exports = {
   siteDescription: '공부, 생각, 작업물 등을 정리하는 블로그',
 
   templates: {
-    Post: '/:title',
+    Post: '/:slug',
     Tag: '/tag/:id'
   },
 
@@ -28,7 +28,7 @@ module.exports = {
             typeName: 'Tag',
             create: true
           }
-        }
+        },
       }
     }
   ],
@@ -41,7 +41,10 @@ module.exports = {
       anchorClassName: 'icon icon-link',
       plugins: [
         '@gridsome/remark-prismjs'
-      ]
+      ],
+      options: {
+        showLineNumbers: true,
+      }
     }
   }
 }

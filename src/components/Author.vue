@@ -3,7 +3,7 @@
 
 		<g-image alt="Author image" class="author__image" src="~/assets/images/author.jpg" width="180" height="180" blur="5" />
 
-		<h1 v-if="showTitle" class="author__site-title">
+		<h1 class="author__site-title">
 			{{ $static.metadata.siteName }}
 		</h1>
 
