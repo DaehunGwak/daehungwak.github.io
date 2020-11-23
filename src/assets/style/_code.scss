@@ -19,6 +19,13 @@ code {
   font-size: .85em;
 }
 
+code[class="language-text"] {
+  background-color: var(--bg-code);
+  border: 1px solid var(--border-color);
+  font-size: .85em;
+  padding: .2em .5em;
+}
+
 code[class*="language-"],
 pre[class*="language-"] {
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
