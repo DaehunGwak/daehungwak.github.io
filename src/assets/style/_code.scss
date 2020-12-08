@@ -7,6 +7,7 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
  */
 
 pre {
+	background-image: var(--bg-noise-img);
   padding: calc(var(--space) / 2);
   font-size: .85em;
   background-color: var(--bg-code);

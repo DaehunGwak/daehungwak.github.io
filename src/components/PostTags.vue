@@ -17,6 +17,7 @@ export default {
   margin: 1em 0 0;
 
   &__link {
+		background-image: var(--bg-noise-img);
   	margin-right: .7em;
   	font-size: .8em;
   	color: currentColor;
