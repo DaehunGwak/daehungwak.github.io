@@ -6,14 +6,14 @@
 }
 
 body {
-	background-image: var(--bg-noise-img);
+	background: var(--bg-noise-img);
  	background-color: var(--bg-color);
  	color: var(--body-color);
  	transition: color .6s, background-color .6s;
  	font-family: 'Nanum Myeongjo',-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   margin:0;
   padding:0;
-  line-height: 1.5;
+	line-height: 1.5;
 }
 
 a:not(.button) {
