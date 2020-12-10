@@ -12,7 +12,9 @@ body {
 }
 
 p {
-	margin-bottom: 1.25em;
+  font-size: 0.9em;
+  padding-bottom: 1.25em;
+  line-height: 1.6rem;
 }
 
 h1, h2, h3, h4, h5 {
@@ -55,18 +57,18 @@ em {
 }
 
 ul { 
+  font-size: 0.9em;
   list-style-type: disc; 
   margin-left: 1.25em;
-  margin-bottom: 1.25em;
   li {
-    margin-bottom: .6em;
+    margin-bottom: 0;
   }
 }
 ol { 
+  font-size: 0.8em;
   list-style-type: decimal; 
   margin-left: 1.25em;
-  margin-bottom: 1.25em;
   li {
-    margin-bottom: .6em;
+    margin-bottom: 0;
   }
 }

@@ -8,10 +8,10 @@ module.exports = {
   siteUrl: 'https://daehungwak.github.io',
   pathPrefix: '/',
   siteName: 'Ordi',
-  siteDescription: '공부, 생각, 작업물 등을 정리하는 블로그',
+  siteDescription: '웹을 좋아하는 개발자\n좋아하는 것 기록 이것저것',
 
   templates: {
-    Post: '/:slug',
+    Post: '/:year/:month/:slug',
     Tag: '/tag/:id'
   },
 
@@ -21,7 +21,7 @@ module.exports = {
       use: '@gridsome/source-filesystem',
       options: {
         typeName: 'Post',
-        path: 'content/posts/*.md',
+        path: 'content/posts/**/*.md',
         refs: {
           // Creates a GraphQL collection from 'tags' in front-matter and adds a reference.
           tags: {

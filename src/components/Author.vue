@@ -8,7 +8,7 @@
 		</h1>
 
 		<p class="author__intro">
-			{{ $static.metadata.siteDescription }}
+			<pre class="author__intro-pre">{{ $static.metadata.siteDescription }}</pre>
 		</p>
 
 		<p class="author__links">
@@ -49,6 +49,15 @@ export default {
 
 	&__intro {
 		opacity: .8;
+
+		pre {
+			padding: 0;
+			border: unset;
+			margin: 0;
+			background:rgba(0,0,0,0); 
+			text-align: center;
+			font-size: 0.85rem;
+		}
 	}
 
 	&__site-title {

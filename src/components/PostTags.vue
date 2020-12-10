@@ -15,10 +15,11 @@ export default {
 <style lang="scss">
 .post-tags {
   margin: 1em 0 0;
+	line-height: 2rem;
 
   &__link {
 		background-image: var(--bg-noise-img);
-  	margin-right: .7em;
+		margin-right: .7em;
   	font-size: .8em;
   	color: currentColor;
   	text-decoration: none;
