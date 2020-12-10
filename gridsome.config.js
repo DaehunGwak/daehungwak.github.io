@@ -11,7 +11,7 @@ module.exports = {
   siteDescription: '웹을 좋아하는 개발자\n좋아하는 것 기록 이것저것',
 
   templates: {
-    Post: '/:year/:month/:slug',
+    Post: '/:year-:month-:day-:slug',
     Tag: '/tag/:id'
   },
 

@@ -7,9 +7,7 @@
 			{{ $static.metadata.siteName }}
 		</h1>
 
-		<p class="author__intro">
-			<pre class="author__intro-pre">{{ $static.metadata.siteDescription }}</pre>
-		</p>
+		<pre class="author__intro">{{ $static.metadata.siteDescription }}</pre>
 
 		<p class="author__links">
 			<a href="//github.com/DaehunGwak">GitHub</a>
@@ -49,15 +47,10 @@ export default {
 
 	&__intro {
 		opacity: .8;
-
-		pre {
-			padding: 0;
-			border: unset;
-			margin: 0;
-			background:rgba(0,0,0,0); 
-			text-align: center;
-			font-size: 0.85rem;
-		}
+		border: unset;
+		background: rgba(0, 0, 0, 0);
+		margin-bottom: 1.2rem;
+		padding: 0;
 	}
 
 	&__site-title {
