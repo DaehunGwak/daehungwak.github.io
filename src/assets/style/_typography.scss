@@ -57,18 +57,26 @@ em {
 }
 
 ul { 
-  font-size: 0.9em;
+  font-size: 0.85em;
   list-style-type: disc; 
   margin-left: 1.25em;
+  padding-bottom: 1.25em;
   li {
-    margin-bottom: 0;
+    margin-bottom: 0.3em;
   }
 }
 ol { 
-  font-size: 0.8em;
+  font-size: 0.85em;
   list-style-type: decimal; 
   margin-left: 1.25em;
+  padding-bottom: 1.25em;
   li {
-    margin-bottom: 0;
+    margin-bottom: 0.3em;
   }
+}
+li > ul, li > ol {
+  padding-bottom: 0;
+}
+li > p {
+  padding: 0;
 }
