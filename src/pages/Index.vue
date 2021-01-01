@@ -44,7 +44,7 @@ export default {
     PostCard
   },
   metaInfo: {
-    title: 'Dev Blog'
+    title: 'Ordi의 개발 블로그'
   }
 }
 </script>
