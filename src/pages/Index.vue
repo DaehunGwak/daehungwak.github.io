@@ -61,10 +61,12 @@ export default {
           property: "og:description",
           content: `${this.$page.metadata.siteDescription}`,
         },
-        { property: "og:url", content: this.$page.metadata.siteUrl },
+        { property: "og:url", content: `${this.$page.metadata.siteUrl}/` },
         {
           property: "og:image",
-          content: require("@/assets/images/og-image.png"),
+          content:
+            this.$page.metadata.siteUrl +
+            require("@/assets/images/og-image.png"),
         },
       ],
     };
