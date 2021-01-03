@@ -5,9 +5,12 @@
 
     <!-- List posts -->
     <div class="posts">
-      <PostCard v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node"/>
+      <PostCard
+        v-for="edge in $page.posts.edges"
+        :key="edge.node.id"
+        :post="edge.node"
+      />
     </div>
-
   </Layout>
 </template>
 
@@ -31,20 +34,42 @@ query {
       }
     }
   }
+  metadata {
+    siteName,
+		siteDescription,
+    siteUrl,
+  }
 }
 </page-query>
 
 <script>
-import Author from '~/components/Author.vue'
-import PostCard from '~/components/PostCard.vue'
+import Author from "~/components/Author.vue";
+import PostCard from "~/components/PostCard.vue";
 
 export default {
   components: {
     Author,
-    PostCard
+    PostCard,
   },
-  metaInfo: {
-    title: 'Dev Blog'
-  }
-}
+  metaInfo() {
+    return {
+      title: "Ordi의 개발 블로그",
+      meta: [
+        // opengraph
+        { property: "og:title", content: "Ordi의 개발 블로그" },
+        {
+          property: "og:description",
+          content: `${this.$page.metadata.siteDescription}`,
+        },
+        { property: "og:url", content: `${this.$page.metadata.siteUrl}/` },
+        {
+          property: "og:image",
+          content:
+            this.$page.metadata.siteUrl +
+            require("@/assets/images/og-image.png"),
+        },
+      ],
+    };
+  },
+};
 </script>
