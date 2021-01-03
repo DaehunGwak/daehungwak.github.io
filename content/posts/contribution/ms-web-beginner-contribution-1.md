@@ -51,13 +51,15 @@ PR을 올렸는데 성공하여 기쁜나머지 정리합니다.
 
 ```js
 // Quiz.vue 일부
+export default {
   data() {
     return {
-      ...
       questions: this.$t("quizzes"),
     };
-
+  },
+}
 // App.vue 일부
+export default {
   data() {
     return {
       locale: "en",
@@ -68,7 +70,7 @@ PR을 올렸는데 성공하여 기쁜나머지 정리합니다.
       this.$root.$i18n.locale = val;
     },
   },
-
+}
 ```
 
 언어 옵션을 선택할때는 App에 locale data가 바뀌고,
@@ -82,9 +84,9 @@ reactivity를 발생시킬 수 없다**는 것을 나타냅니다.
 
 ```js
 // Quiz.vue 일부
+export default {
   data() {
     return {
-      ...
       // questions 삭제
     };
   },
@@ -93,11 +95,12 @@ reactivity를 발생시킬 수 없다**는 것을 나타냅니다.
       return this.$t("quizzes");
     },
   },
+}
 ```
 
 ### 2. 하드 코딩된 목차 리스트 v-for로 개선
 
-```js
+```html
 // quiz-app/src/views/Home.vue 일부
 <router-link class="link" to="quiz/1"
   >Lesson 1: Pre-Lecture Quiz</router-link
@@ -121,7 +124,7 @@ reactivity를 발생시킬 수 없다**는 것을 나타냅니다.
 해당 부분은 번역된 json messages의 각 아이템을 순회하여 구성하면
 json에 아이템이 변경되도 바로 반영될 수 있기 때문에 v-for로 수정하였습니다.
 
-```js
+```html
 // v-for을 이용한 quiz-app/src/views/Home.vue 개선
 <router-link
   v-for="q in questions"
