@@ -2,6 +2,21 @@
 <html ${htmlAttrs}>
   <head>
     ${head}
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-166020551-2"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-166020551-2");
+    </script>
   </head>
   <body ${bodyAttrs}>
     <script>
@@ -11,32 +26,31 @@
         function setTheme(newTheme) {
           window.__theme = newTheme;
           preferredTheme = newTheme;
-          document.body.setAttribute('data-theme', newTheme);
+          document.body.setAttribute("data-theme", newTheme);
           window.__onThemeChange(newTheme);
         }
 
         var preferredTheme;
         try {
-          preferredTheme = localStorage.getItem('theme');
-        } catch (err) { }
+          preferredTheme = localStorage.getItem("theme");
+        } catch (err) {}
 
         window.__setPreferredTheme = function(newTheme) {
           setTheme(newTheme);
           try {
-            localStorage.setItem('theme', newTheme);
+            localStorage.setItem("theme", newTheme);
           } catch (err) {}
-        }
+        };
 
-        var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        var darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
         darkQuery.addListener(function(e) {
-          window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+          window.__setPreferredTheme(e.matches ? "dark" : "light");
         });
 
-        setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
+        setTheme(preferredTheme || (darkQuery.matches ? "dark" : "light"));
       })();
     </script>
 
-    ${app}
-    ${scripts}
+    ${app} ${scripts}
   </body>
 </html>
