@@ -2,6 +2,8 @@
 
 ☘️  Blog Vue Gridsome
 
+![image](https://user-images.githubusercontent.com/12469427/104202076-cea4b000-546d-11eb-817b-c4a55cf860cc.png)
+
 ## Gridsome Blog Starter
 
 > A simple, hackable & minimalistic starter for Gridsome that uses Markdown for content.
