@@ -30,6 +30,25 @@ module.exports = {
           }
         },
       }
+    },
+    {
+      use: '@gridsome/plugin-google-analytics',
+      options: {
+        id: 'UA-166020551-2'
+      }
+    },
+    {
+      use: '@gridsome/plugin-sitemap',
+      options: {
+        cache: 600000,
+        exclude: ["/tag/*"],
+        config: {
+          '/*': {
+            changefreq: "weekly",
+            priority: 0.5
+          }
+        }
+      }
     }
   ],
 
