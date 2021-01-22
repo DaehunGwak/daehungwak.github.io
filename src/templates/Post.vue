@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <Layout @update:theme="updateThemeEvent">
     <div class="post-title">
       <h1 class="post-title__text">
         {{ $page.post.title }}
@@ -24,7 +24,7 @@
       </div>
     </div>
 
-    <div class="post-comments">
+    <div class="post-comments" ref="post-comments">
       <!-- Add comment widgets here -->
     </div>
 
@@ -42,6 +42,41 @@ export default {
     Author,
     PostMeta,
     PostTags,
+  },
+  data() {
+    return {
+      theme: localStorage.getItem("theme"),
+    };
+  },
+  watch: {
+    theme() {
+      const script = this.createUtterancesNode();
+      const oldChild = this.$refs["post-comments"].childNodes[0];
+      this.$refs["post-comments"].replaceChild(script, oldChild);
+    },
+  },
+  mounted() {
+    const script = this.createUtterancesNode();
+    this.$refs["post-comments"].appendChild(script);
+  },
+  methods: {
+    updateThemeEvent(theme) {
+      this.theme = theme;
+    },
+    createUtterancesNode() {
+      const script = window.document.createElement("script");
+      const attributes = {
+        src: "https://utteranc.es/client.js",
+        repo: "DaehunGwak/daehungwak.github.io",
+        "issue-term": "pathname",
+        theme: this.theme === "light" ? "github-light" : "github-dark",
+        crossorigin: "anonymous",
+      };
+      Object.entries(attributes).forEach(([key, value]) => {
+        script.setAttribute(key, value);
+      });
+      return script;
+    }
   },
   metaInfo() {
     return {
