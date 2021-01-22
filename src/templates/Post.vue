@@ -24,7 +24,7 @@
       </div>
     </div>
 
-    <div class="post-comments">
+    <div class="post-comments" ref="post-comments">
       <!-- Add comment widgets here -->
     </div>
 
@@ -42,6 +42,20 @@ export default {
     Author,
     PostMeta,
     PostTags,
+  },
+  mounted() {
+    const script = window.document.createElement("script");
+    const attributes = {
+      src: "https://utteranc.es/client.js",
+      repo: "DaehunGwak/daehungwak.github.io",
+      "issue-term": "pathname",
+      theme: "preferred-color-scheme",
+      crossorigin: "anonymous",
+    };
+    Object.entries(attributes).forEach(([key, value]) => {
+      script.setAttribute(key, value);
+    });
+    this.$refs["post-comments"].appendChild(script);
   },
   metaInfo() {
     return {
