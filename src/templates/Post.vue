@@ -24,9 +24,16 @@
       </div>
     </div>
 
-    <div class="post-comments" ref="post-comments">
-      <!-- Add comment widgets here -->
-    </div>
+    <div
+      class="post-comments"
+      ref="post-comments-dark"
+      v-show="isDarkTheme"
+    ></div>
+    <div
+      class="post-comments"
+      ref="post-comments-light"
+      v-show="!isDarkTheme"
+    ></div>
 
     <Author class="post-author" />
   </Layout>
@@ -38,6 +45,7 @@ import PostTags from "~/components/PostTags";
 import Author from "~/components/Author.vue";
 
 export default {
+  name: "Post",
   components: {
     Author,
     PostMeta,
@@ -45,38 +53,37 @@ export default {
   },
   data() {
     return {
-      theme: localStorage.getItem("theme"),
+      isDarkTheme: false,
     };
   },
-  watch: {
-    theme() {
-      const script = this.createUtterancesNode();
-      const oldChild = this.$refs["post-comments"].childNodes[0];
-      this.$refs["post-comments"].replaceChild(script, oldChild);
-    },
-  },
   mounted() {
-    const script = this.createUtterancesNode();
-    this.$refs["post-comments"].appendChild(script);
+    if (window.__theme == "dark") this.isDarkTheme = true;
+    this.$refs["post-comments-dark"].appendChild(
+      this.createUtterancesNode("dark")
+    );
+    this.$refs["post-comments-light"].appendChild(
+      this.createUtterancesNode("light")
+    );
   },
   methods: {
     updateThemeEvent(theme) {
-      this.theme = theme;
+      this.isDarkTheme = theme;
     },
-    createUtterancesNode() {
+    createUtterancesNode(theme) {
       const script = window.document.createElement("script");
       const attributes = {
         src: "https://utteranc.es/client.js",
         repo: "DaehunGwak/daehungwak.github.io",
         "issue-term": "pathname",
-        theme: this.theme === "light" ? "github-light" : "github-dark",
+        theme: theme === "light" ? "github-light" : "github-dark",
         crossorigin: "anonymous",
+        sync: true,
       };
       Object.entries(attributes).forEach(([key, value]) => {
         script.setAttribute(key, value);
       });
       return script;
-    }
+    },
   },
   metaInfo() {
     return {
