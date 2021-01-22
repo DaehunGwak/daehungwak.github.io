@@ -7,7 +7,7 @@
       </div>
       
       <div class="header__right">        
-        <ToggleTheme />
+        <ToggleTheme @update:theme="updateThemeEvent"/>
       </div>
     </header>
 
@@ -34,6 +34,11 @@ export default {
   components: {
     Logo,
     ToggleTheme
+  },
+  methods: {
+    updateThemeEvent(theme) {
+      this.$emit("update:theme", theme);
+    },
   }
 }
 </script>
